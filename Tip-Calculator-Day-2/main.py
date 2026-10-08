@@ -92,7 +92,10 @@ print(f"Each person should pay: ${amount_each_person_pays}")
 
 
 # How she did it:
-print("Welcome to the another tip calculator")
+print()
+print()
+print("---------------------------------------")
+print("Welcome to the another tip calculator --> How Dr. Angela did it")
 bill = float(input("What was the total bill? $"))
 tip = float(input("How much tip would you like to give? 10, 12, or 15? "))
 people = int(input("How many people to split the bill? "))
