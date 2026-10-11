@@ -196,59 +196,59 @@ scissors = r"""
 # """
 
 print("Welcome to Dynasty Tournament Rock Paper Scissors Game")
-# userMove = int(input("What do you choose? Type 0 for Rock, 1 for Paper, or 2 for Scissors. \n"))
+userMove = int(input("What do you choose? Type 0 for Rock, 1 for Paper, or 2 for Scissors. \n"))
 
-# computer_move = random.randint(0, 2)
-# # print(computer_move)
+computer_move = random.randint(0, 2)
+# print(computer_move)
 
-# if (userMove == 0):
-#     print("You choose rock")
-#     print()
-#     print(rock)
-#     print("Computer chose:")
-#     if (computer_move == 0):
-#         print(rock)
-#         print("It's a tie.")
-#     elif (computer_move == 1):
-#         print(paper)
-#         print("You lose.")
-#     elif (computer_move == 2):
-#         print(scissors)
-#         print("You win.")
+if (userMove == 0):
+    print("You choose rock")
+    print()
+    print(rock)
+    print("Computer chose:")
+    if (computer_move == 0):
+        print(rock)
+        print("It's a tie.")
+    elif (computer_move == 1):
+        print(paper)
+        print("You lose.")
+    elif (computer_move == 2):
+        print(scissors)
+        print("You win.")
 
-# elif (userMove == 1):
-#     print("You choose paper")
-#     print()
-#     print(paper)
-#     print("Computer chose:")
-#     if (computer_move == 0):
-#         print(rock)
-#         print("You win.")
-#     elif (computer_move == 1):
-#         print(paper)
-#         print("It's a tie")
-#     elif (computer_move == 2):
-#         print(scissors)
-#         print("You lose.")
+elif (userMove == 1):
+    print("You choose paper")
+    print()
+    print(paper)
+    print("Computer chose:")
+    if (computer_move == 0):
+        print(rock)
+        print("You win.")
+    elif (computer_move == 1):
+        print(paper)
+        print("It's a tie")
+    elif (computer_move == 2):
+        print(scissors)
+        print("You lose.")
 
-# elif (userMove == 2):
-#     print(scissors)
-#     print("You choose scissors")
-#     print()
-#     print("Computer chose:")
-#     if (computer_move == 0):
-#         print(rock)
-#         print("You lose.")
-#     elif (computer_move == 1):
-#         print(paper)
-#         print("You win.")
-#     elif (computer_move == 2):
-#         print(scissors)
-#         print("It's a tie.")
-# elif (userMove >= 3 or userMove < 0):
-#     print("Oops! You typed an invalid number. You lose.")
-# else:
-#     print("Oops! You typed an invalid number. You lose.")
+elif (userMove == 2):
+    print(scissors)
+    print("You choose scissors")
+    print()
+    print("Computer chose:")
+    if (computer_move == 0):
+        print(rock)
+        print("You lose.")
+    elif (computer_move == 1):
+        print(paper)
+        print("You win.")
+    elif (computer_move == 2):
+        print(scissors)
+        print("It's a tie.")
+elif (userMove >= 3 or userMove < 0):
+    print("Oops! You typed an invalid number. You lose.")
+else:
+    print("Oops! You typed an invalid number. You lose.")
 
 # All done by thinking properly. Took over 20 minutes though.
 
