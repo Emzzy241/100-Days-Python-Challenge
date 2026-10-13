@@ -1,0 +1,38 @@
+word_list = [
+    # Animals
+    "aardvark", "albatross", "alligator", "alpaca", "ant", "anteater", "antelope", "ape", 
+    "armadillo", "baboon", "badger", "barracuda", "bat", "bear", "beaver", "bee", "bison", 
+    "boar", "buffalo", "butterfly", "camel", "capybara", "caribou", "cassowary", "cat", 
+    "caterpillar", "cattle", "chamois", "cheetah", "chicken", "chimpanzee", "chinchilla", 
+    "chough", "clam", "coati", "cobra", "cockroach", "cod", "cormorant", "coyote", "crab", 
+    "crane", "crocodile", "crow", "curlew", "deer", "dinosaur", "dog", "dogfish", "dolphin", 
+    "donkey", "dotterel", "dove", "dragonfly", "duck", "dugong", "dunlin", "eagle", "echidna", 
+    "eel", "eland", "elephant", "elk", "emu", "falcon", "ferret", "finch", "fish", "flamingo", 
+    "fly", "fox", "frog", "gaur", "gazelle", "gerbil", "giraffe", "gnat", "gnu", "goat", 
+    "goldfinch", "goldfish", "goose", "gorilla", "goshawk", "grasshopper", "grouse", "guanaco", 
+    "gull", "hamster", "hare", "hawk", "hedgehog", "heron", "herring", "hippopotamus", 
+    "hornet", "horse", "human", "hummingbird", "hyena", "ibex", "iguana", "jackal", "jaguar", 
+    "jay", "jellyfish", "kangaroo", "kingfisher", "koala", "kookabura", "kouprey", "kudu", 
+    "lapwing", "lark", "lemur", "leopard", "lion", "llama", "lobster", "locust", "loris", 
+    "louse", "lyrebird", "magpie", "mallard", "manatee", "mandrill", "mantis", "marten", 
+    "meerkat", "mink", "mole", "mongoose", "monkey", "moose", "mosquito", "mouse", "mule", 
+    "narwhal", "newt", "nightingale", "octopus", "okapi", "opossum", "ostrich", "otter", 
+    "owl", "oyster", "panther", "parrot", "partridge", "peafowl", "pelican", "penguin", 
+    "pheasant", "pig", "pigeon", "pony", "porcupine", "porpoise", "quail", "quelea", "quetzal", 
+    "rabbit", "raccoon", "rail", "ram", "rat", "raven", "reddeer", "reindeer", "rhinoceros", 
+    "rook", "salamander", "salmon", "sandpiper", "sardine", "scorpion", "seahorse", "seal", 
+    "shark", "sheep", "shrew", "skunk", "snail", "snake", "sparrow", "spider", "spoonbill", 
+    "squid", "squirrel", "starling", "stingray", "stinkbug", "stork", "swallow", "swan", 
+    "tapir", "tarsier", "termite", "tiger", "toad", "trout", "turkey", "turtle", "viper", 
+    "vulture", "wallaby", "walrus", "wasp", "weasel", "whale", "wildcat", "wolf", "wolverine", 
+    "wombat", "woodcock", "woodpecker", "worm", "wren", "yak", "zebra",
+
+    # Common Objects & Everyday Words
+    "anchor", "balloon", "basket", "battery", "camera", "candle", "carpet", "castle", 
+    "clock", "compass", "crystal", "diamond", "envelope", "feather", "fountain", "galaxy", 
+    "garden", "glacier", "guitar", "hammer", "helmet", "island", "jacket", "jungle", 
+    "lantern", "magnet", "marble", "mirror", "mountain", "nebula", "orchid", "palace", 
+    "pencil", "planet", "pocket", "puzzle", "pyramid", "quartz", "rocket", "saddle", 
+    "satchel", "shadow", "shield", "telescope", "thunder", "tornado", "trophy", "tunnel", 
+    "umbrella", "volcano", "whisper", "window", "zephyr"
+]
