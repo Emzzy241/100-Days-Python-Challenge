@@ -130,6 +130,9 @@ while should_continue:
     print("Welcome to Caesar Cipher, what would you like to do today?")
     print(logo)
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+    if direction not in ["encode", "decode"]:
+        print("Sorry, I did not get that. Exiting the App. Try Again")
+        break 
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
 
