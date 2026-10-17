@@ -132,7 +132,7 @@ def find_highest_bidder(bidding_dictionary):
             highest_bid = bid_amount
             winner = bidder
     print(f"The winner is {winner} with a bid of ${highest_bid}")
-            # My code below also works
+            # The code below also works
             # list_of_bid_prices.append(bid_amount)
             # highest_bid = bid_amount
             # print(highest_bid)
@@ -144,8 +144,8 @@ def find_highest_bidder(bidding_dictionary):
 continue_bidding = True
 
 while continue_bidding:
-    name = input("Enter the name of the bidder \n")
-    price = int(input(f"Enter {name} price \n"))
+    name = input("Enter the name of the bidder: ")
+    price = int(input(f"Enter {name} price $"))
     bids[name] = price
     should_continue = input("Are there any more bidders? Type 'yes' or 'no' \n")
     if should_continue == "no":
