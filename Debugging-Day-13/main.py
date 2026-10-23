@@ -141,3 +141,6 @@ mutate([1, 2, 3, 5, 8, 13])
 # Everyone gets bugs, keep creating bugs, keep creating them, you will only get better at solving them. Come back to tis lesson if you are facing a bug.
 # Every bug you catch is like lifting a dumb bell in the gym. The more reps you do, the better you get. 
 # Confidence is earned, keep solving problems and you've gat this. You still have lots of challenges to solve mehn. Will come back to solve them all pretty soon.
+
+# Dynasty, this is me just saying to you right about now: You are really trying mehn!!!.... Keep it up, and keep on keeping on. 
+# You will definitely become Great mehn. Keep going, Chief sir.
