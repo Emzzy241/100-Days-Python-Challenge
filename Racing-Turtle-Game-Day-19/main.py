@@ -153,3 +153,7 @@ while is_race_on:
 # ron.goto(-190, -120)
 
 screen.exitonclick()
+
+# One day, I know it within me, I am gonna be big, and gonna be a very very good programmer.
+# Keep building, keep winning, keep growing. Dr. Angela did recommend that some of these projects should essentially have no limitations in your hands
+# One can turn some of these projects into something very very big, and much more better.
