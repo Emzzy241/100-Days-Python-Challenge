@@ -19,10 +19,13 @@
 # TODO-1: Create a snake body
 
 
-from turtle import Screen, Turtle
+# from turtle import Screen, Turtle --> It has been greyed out, no need for it again... No usage of it in this file
+from turtle import Screen
 import random
 import time
 from snake import Snake
+from food import Food
+from scoreboard import Scoreboard
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -36,6 +39,8 @@ screen.tracer(0)
 # segments = []
 
 snake = Snake()
+food = Food()
+scoreboard = Scoreboard()
 screen.listen()
 # screen.onkey("Up")
 # screen.onkey(key="Up", fun=snake.up)
@@ -49,8 +54,41 @@ game_is_on = True
 while game_is_on:
     screen.update()
     time.sleep(0.1)
-    
     snake.move()
+    
+    # Detect collision with food. distance(x, y=None).
+    # The distance method works by comparing the distance from this turtle to whatever is put inside the parenthesis
+    # x = a number or a pair/vector of numbers or a turtle instance
+    # Y = a number if x is a number, else None
+    
+    if snake.head.distance(food) < 15:
+        # print("snake collided with food")
+        food.refresh()
+        snake.extend()
+        scoreboard.increase_score()
+        
+    # Detect collision with wall
+    if snake.head.xcor() > 290 or snake.head.xcor() < -290 or snake.head.ycor() > 290 or snake.head.ycor() < -290:
+        game_is_on = False
+        scoreboard.game_over()
+    
+    # Detect collision with tail.
+    # for segment in snake.segments:
+    for segment in snake.segments[1:]:
+        # a way to bypass the snake head
+        # if segment == snake.head:
+        #     pass
+        # TODO: To slice out the segment actually
+        
+        if snake.head.distance(segment) < 10:
+            game_is_on = False
+            scoreboard.game_over()
+        # No longer any need for the elif below, just one if is now sufficient
+        # elif snake.head.distance(segment) < 10:
+        #     game_is_on = False
+        #     scoreboard.game_over()
+    # if head collides with any segment in the tail:
+    # trigger game_over
 
 
 screen.exitonclick()

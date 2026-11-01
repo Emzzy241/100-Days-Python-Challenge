@@ -21,13 +21,20 @@ class Snake:
         
     def create_snake(self):
         for position in STARTING_POSITIONS:
-            new_segment = Turtle("square")
-            new_segment.color("white")
-            new_segment.penup()
-            new_segment.goto(position)
-            self.segments.append(new_segment)
+            self.add_segment(position)
 
-
+    def extend(self):
+        # add a segment to the snake.
+        # Remember in python, you pass in -ve number to a list, it starts counting from the end.
+        self.add_segment(self.segments[-1].position())
+        
+    def add_segment(self, position):
+        new_segment = Turtle("square")
+        new_segment.color("white")
+        new_segment.penup()
+        new_segment.goto(position)
+        self.segments.append(new_segment)
+        
     # For Moving our snake:
     # for seg_num in range(start=2, stop=0, step=-1):
         # Look at the array, we have 3 elements in the array.... Start from element 2, 
