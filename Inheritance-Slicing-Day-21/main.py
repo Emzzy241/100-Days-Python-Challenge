@@ -1,0 +1,26 @@
+# Day-21: Inheritance, Slicing, and Finishing Up Day-20's Project.
+
+class Animal:
+    def __init__(self):
+        self.num_eyes = 2
+    
+    def breathe(self):
+        print("Inhale, exhale.")
+        
+class Fish(Animal):
+    def __init__(self):
+        super().__init__()
+    
+    def swim(self):
+        print("Moving in water.")
+        
+    def breathe(self):
+        # First we call the method in the super class and execute the breathe function
+        # Then we modify it and can make changes to it.
+        super().breathe()   
+        print("doing this under water.")
+    
+nemo = Fish()
+nemo.swim()
+nemo.breathe()
+print(nemo.num_eyes)
