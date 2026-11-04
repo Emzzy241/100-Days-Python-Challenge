@@ -23,3 +23,7 @@ class Scoreboard(Turtle):
     def game_over(self):
         self.goto(0, 0)
         self.write(f"GAME OVER", align="Center", font=FONT)
+        
+# TODO: One of me future goals is actually to be able to pick any of these projects that I have been building so far... 
+# And just re-build every one of them. One might need to re-use some of the steps that Dr. Angela specified if I cannot be able to come up with my own steps
+# God help me.... Utilizing things like spaced repetition would really help actually, to ensure one is truly truly reading and understanding what one is building.
