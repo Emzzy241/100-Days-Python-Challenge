@@ -47,12 +47,22 @@ while len(guessed_states) < 50:
         #         states_to_learn.to_csv("states_to_learn.csv", index=False)
 
         # Alternative way
-        missing_states = []
-        for state in all_states:
-            if state not in guessed_states:
-                missing_states.append(state)
+        # missing_states = []
+        # for state in all_states:
+        #     if state not in guessed_states:
+        #         missing_states.append(state)
+        # new_data = pandas.DataFrame(missing_states)
+        # new_data.to_csv("states_to_learn.csv")
+        # Following the format:
+        # missing_states = [new_item for item in list if test]
+        # The one line below saved us 4 lines of code
+        missing_states = [state for state in all_states if state not in guessed_states]
         new_data = pandas.DataFrame(missing_states)
         new_data.to_csv("states_to_learn.csv")
+        # print(missing_states)
+        # rewriting things with a List Comprehension
+        
+        
         break
     # had to prevent repetition of states. Previously, Alabama multiple times kept increasing the state score counter
     if answer_state in all_states and answer_state not in guessed_states:
