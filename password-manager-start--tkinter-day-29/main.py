@@ -5,6 +5,7 @@ from tkinter import * # only imports all the classes and constants, but would no
 from tkinter import messagebox
 from random import randint, choice, shuffle
 import pyperclip
+import json
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # # From Password Generator Project
@@ -73,21 +74,84 @@ def save():
     website = website_input.get()
     email = email_input.get()   
     password = password_input.get()
+    new_data = {
+        website: {
+          "email": email,
+          "password": password,  
+    }
+        }
     
     if len(website) == 0 or len(email) == 0 or len(password) == 0:
         messagebox.showinfo(title="Oops", message="Please make sure you haven't left any fields empty!")
     else:
-        # Please don't leave any fields empty!
+        try:
+            with open("data.json", "r") as data_file:
+                    #    reading old data
+                        data = json.load(data_file)
+        except FileNotFoundError:
+            with open("data.json", "w") as data_file:
+                # Saving the updated data
+                json.dump(new_data, data_file, indent=4)
+        else:
+            # Updating old data with new data
+            data.update(new_data) 
+            with open("data.json", "w") as data_file:
+                json.dump(data, data_file, indent=4)
+            website_input.delete(0, END)
+            password_input.delete(0, END)
+            
+        finally:              
+            # json.load() takes the json file and converts it into a python dictionary: $ python main.py
+            # <class 'dict'>... So essentially, we can use json.dump(), and json.load() to serialize and deserialize from json.data to python dictionary
+            # And it allows us that free interchange of information.... We change it into a json data for storing, and convert to python dictionary so we can easily work with it in our code
+            # Update data   
+            # print(type(data))
+            website_input.delete(0, END)
+            password_input.delete(0, END)
         
-        # messagebox.showinfo(title="Title", message="Message"), also has yesno, okcancel, retrycancel, askquestion, yesnocancel
-        is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered: \nEmail: {email} \nPassword: {password} \n Is it ok to save?")
+# ---------------------------- FIND PASSWORD ------------------------------- #
+
+def find_password():
+    website = website_input.get()
+    try:    
+        with open("data.json") as data_file:
+            data = json.load(data_file)
+    except FileNotFoundError:
+        messagebox.showinfo(title="Error: File Not Found", message=f"No data file found ")
+    else:
+        if website in data:
+            email = data[website]["email"]
+            password = data[website]["password"]
+            print(f"{email} and {password}")
+            messagebox.showinfo(title=website, message=f"Email: {email}\nPassword: {password}")
+        else:
+            messagebox.showinfo(title=website, message=f"No details for {website} exists")
+            
+# if if & else works flawlessly, then use it, instead of using try and except.... 
+# Note: An exception is something that happens very rarely, whereas if and else happens frequently, it is pretty often that a user searches your website.
+# ONly use exception handling if you don't have another easy alternative
+            
+# Before json data improvement
+# def save():
+    
+#     website = website_input.get()
+#     email = email_input.get()   
+#     password = password_input.get()
+    
+#     if len(website) == 0 or len(email) == 0 or len(password) == 0:
+#         messagebox.showinfo(title="Oops", message="Please make sure you haven't left any fields empty!")
+#     else:
+#         # Please don't leave any fields empty!
         
-        if is_ok:
-            # to close this file automatically without us having to write: file.close()
-            with open("data.txt", "a") as data_file:
-                data_file.write(f"{website} | {email} | {password}\n")
-                website_input.delete(0, END)
-                password_input.delete(0, END)
+#         # messagebox.showinfo(title="Title", message="Message"), also has yesno, okcancel, retrycancel, askquestion, yesnocancel
+#         is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered: \nEmail: {email} \nPassword: {password} \n Is it ok to save?")
+        
+#         if is_ok:
+#             # to close this file automatically without us having to write: file.close()
+#             with open("data.txt", "a") as data_file:
+#                 data_file.write(f"{website} | {email} | {password}\n")
+#                 website_input.delete(0, END)
+#                 password_input.delete(0, END)
     
 # Standard Dialogs are popups that your tkinter program can generate, most popular is the messagebox(): YesNo, OkCancel, RetryCancel
 # # ---------------------------- UI SETUP ------------------------------- #
@@ -168,11 +232,11 @@ password_label.grid(column=0, row=3, sticky="e", padx=(0, 10), pady=6)
 
 # Inputs (Stretched cleanly across columns with sticky="ew")
 website_input = Entry(bg=ENTRY_BG, fg=TEXT_COLOR, font=FONT_INPUT, relief="solid", bd=1)
-website_input.grid(column=1, row=1, columnspan=2, sticky="ew", pady=6, ipady=4)
+website_input.grid(column=1, row=1, sticky="ew", pady=6, ipady=4, padx=10)
 website_input.focus()
 
 email_input = Entry(bg=ENTRY_BG, fg=TEXT_COLOR, font=FONT_INPUT, relief="solid", bd=1)
-email_input.grid(column=1, row=2, columnspan=2, sticky="ew", pady=6, ipady=4)
+email_input.grid(column=1, row=2, columnspan=2, sticky="ew", pady=6, ipady=4, padx=5)
 email_input.insert(0, "dynasty.dev241@gmail.com")
 
 password_input = Entry(width=24, bg=ENTRY_BG, fg=TEXT_COLOR, font=FONT_INPUT, relief="solid", bd=1)
@@ -190,7 +254,20 @@ password_button = Button(
     padx=10,
     pady=4
 )
+search_button = Button(
+    text="Search",
+    command=find_password,
+    bg="#ECF0F1",
+    fg=TEXT_COLOR,
+    font=("Segoe UI", 9, "bold"),
+    relief="flat",
+    cursor="hand2",
+    padx=10,
+    pady=4,
+    width=12
+)
 password_button.grid(column=2, row=3, sticky="ew", pady=6)
+search_button.grid(column=2, row=1, sticky="ew", pady=6)
 
 add_button = Button(
     text="Add Password",
