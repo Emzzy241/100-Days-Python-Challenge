@@ -14,7 +14,7 @@
 # else:
 #     content = file.read()
 #     print(content)
-    335
+    
 # finally:
 #     raise TypeError("This is an error that I made up.")
 # doing the above, raising any error whether TypeError or KeyError, or FileNotFoundError, any error we raise at all, our program will be crashed because of this error
@@ -69,4 +69,4 @@ print(bmi)
 # Python has an inbuilt JSON library: json.dump -> Write, json.load() -> Read, json.update -> Update
 # Off to the password manager app now... 
 
-# Challenge 2: To Search for a website in the password manager...
+# Challenge 2: To Search for a website in the password manager.
